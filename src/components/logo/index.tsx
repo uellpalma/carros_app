@@ -1,12 +1,8 @@
 import React from 'react'
-import {
-  View,
-  Image,
-  StyleSheet
-} from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
 
-export default function Logo() {
-  return(
+const Logo = () => {
+  return (
     <View style={styles.contentLogo}>
       <Image
         style={styles.logo}
@@ -20,9 +16,11 @@ const styles = StyleSheet.create({
   contentLogo: {
     alignItems: 'center'
   },
-  logo: { 
+  logo: {
     width: 200,
     height: 150,
     marginBottom: 50
-  },
+  }
 })
+
+export default Logo

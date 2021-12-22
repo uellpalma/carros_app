@@ -1,13 +1,9 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  StyleSheet
-} from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import Logo from '../logo'
 
-export default function SplachScreen() {
-  return(
+const SplachScreen = () => {
+  return (
     <View style={styles.container}>
       <Logo />
 
@@ -17,7 +13,7 @@ export default function SplachScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,3 +26,5 @@ const styles = StyleSheet.create({
     bottom: 20
   }
 })
+
+export default SplachScreen

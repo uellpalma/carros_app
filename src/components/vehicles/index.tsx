@@ -1,17 +1,17 @@
-import React from 'react'
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet
-} from 'react-native'
+import React, { memo } from 'react'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import { IconButton } from 'react-native-paper'
+import { Vehicles } from '../../screens/vehicles'
 
-export default function Vehicle({ plate, onDelete }) {
-  return(
+interface Vehicle extends Vehicles {
+  onDelete: () => void
+}
+
+const Vehicle = ({ plate, onDelete }: Vehicle) => {
+  return (
     <View style={styles.vehicleCard}>
-      <Image 
-        style={styles.vehicleCardImage} 
+      <Image
+        style={styles.vehicleCardImage}
         source={require('../../resources/img/carro.png')}
       />
       <View style={styles.vehicleCardText}>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: '#999'
   },
-  vehiclePlate: { 
+  vehiclePlate: {
     fontSize: 20,
     fontWeight: '700',
     color: 'rgba(0,0,0,.6)'
@@ -60,3 +60,5 @@ const styles = StyleSheet.create({
     right: 0
   }
 })
+
+export default memo(Vehicle)
